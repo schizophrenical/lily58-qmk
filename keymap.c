@@ -167,12 +167,12 @@ bool oled_task_user(void) {
     // Layer state
     if (IS_LAYER_ON(_QWERTY)){
       oled_write_ln(" || - Layer: QWERTY", false);
+    } else if (IS_LAYER_ON(_LOWER) && IS_LAYER_ON(_RAISE)) {
+      oled_write_ln(" || - Layer: ADJ  ", false);
     } else if (IS_LAYER_ON(_LOWER)){
-      oled_write_ln(" || - Layer: SYMBOLS", false);
+      oled_write_ln(" || - Layer: SYMB ", false);
     } else if (IS_LAYER_ON(_RAISE)){
-      oled_write_ln(" || - Layer: FUNCTION KEYS", false);
-    } else {
-      oled_write_ln(" || - Layer: ADJUST", false);
+      oled_write_ln(" || - Layer: FUNC ", false);
     }
     // WPM
     oled_write(" || - WPM: ", false);
